@@ -40,3 +40,17 @@
 /Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/nurhasyim/Codes/loginPOC2/loginPOC2/obj/Debug/net8.0/loginPOC2.csproj.AssemblyReference.cache
 /Users/nurhasyim/Codes/loginPOC2/loginPOC2/obj/Debug/net8.0/loginPOC2.csproj.Up2Date
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/obj/Debug/net8.0/loginPOC2.sourcelink.json
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Extensions.Logging.File.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.Async.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.RollingFile.dll

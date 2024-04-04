@@ -1,15 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel.Client;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 
 public class LoginController : Controller
 {
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly IConfiguration _configuration;
 
-    public LoginController(IHttpClientFactory httpClientFactory)
+    public LoginController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
         _httpClientFactory = httpClientFactory;
+        _configuration = configuration;
     }
 
     public IActionResult Index()
@@ -18,26 +24,26 @@ public class LoginController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Index(string username, string password)
+    public async Task<IActionResult> Index(string username, string password, [FromServices] ILogger<LoginController> logger, [FromServices] IHttpContextAccessor httpContextAccessor)
     {
         var client = _httpClientFactory.CreateClient();
 
         // Discover endpoints from metadata
-        var disco = await client.GetDiscoveryDocumentAsync("http://localhost:8080/auth/realms/loginPOC");
+        var disco = await client.GetDiscoveryDocumentAsync($"{_configuration["Keycloak:AuthServerUrl"]}realms/{_configuration["Keycloak:Realm"]}/.well-known/openid-configuration");
         if (disco.IsError)
         {
-            Console.WriteLine("Discovery document error: " + disco.Error);
+            logger.LogError("Discovery document error: {Error}", disco.Error);
             ViewBag.ErrorMessage = disco.Error;
             return View("Error");
         }
 
-        Console.WriteLine("Discovery document successful.");
+        logger.LogInformation("Discovery document successful.");
 
         // Request token
         var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
         {
             Address = disco.TokenEndpoint,
-            ClientId = "myclient",
+            ClientId = _configuration["Keycloak:Resource"],
             UserName = username,
             Password = password,
             Scope = "openid"
@@ -45,20 +51,20 @@ public class LoginController : Controller
 
         if (tokenResponse.IsError)
         {
-            Console.WriteLine("Token request error: " + tokenResponse.Error);
+            logger.LogError("Token request error: {Error}", tokenResponse.Error);
             ViewBag.ErrorMessage = tokenResponse.Error;
             return View("Error");
         }
 
-        Console.WriteLine("Token request successful.");
+        logger.LogInformation("Token request successful.");
 
         // Store token in session or other storage if needed
-        HttpContext.Session.SetString("access_token", tokenResponse.AccessToken);
+        httpContextAccessor.HttpContext.Session.SetString("access_token", tokenResponse.AccessToken);
 
-        Console.WriteLine("Access token stored in session.");
-        Console.WriteLine("Authentication logic executed.");
+        logger.LogInformation("Access token stored in session.");
+        logger.LogInformation("Authentication logic executed.");
 
-        // Redirect to home page or any other desired page after successful authentication
-        return RedirectToAction("Index", "/home");
+        // Redirect to /home page after successful authentication
+        return Redirect("/home");
     }
 }

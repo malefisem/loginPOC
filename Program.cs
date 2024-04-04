@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer; // Import JwtBearer namespace
 using Microsoft.Extensions.Logging;
-
+using Serilog;
+using Serilog.Formatting.Compact;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,12 @@ builder.Services.AddAuthorization(options =>
         policy.RequireAuthenticatedUser());
 });
 builder.Services.AddSession();
+builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
+{
+    loggerConfiguration
+        .WriteTo.File(new CompactJsonFormatter(), "logs/log-.txt", rollingInterval: RollingInterval.Day)
+        .ReadFrom.Configuration(hostingContext.Configuration);
+});
 
 var app = builder.Build();
 
