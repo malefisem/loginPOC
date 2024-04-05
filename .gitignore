@@ -3,3 +3,6 @@ obj
 
 # Ignore bin folder
 bin
+
+# Ignore logs folder
+logs
