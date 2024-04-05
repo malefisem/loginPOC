@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace loginPOC2.Pages;
 
-[Authorize(Policy = "RequireLoggedIn")]
+// [Authorize(Policy = "RequireLoggedIn")]
 
 public class ContactlessMenuModel : PageModel
 {
