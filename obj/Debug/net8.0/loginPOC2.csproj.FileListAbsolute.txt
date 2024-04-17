@@ -54,3 +54,5 @@
 /Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
 /Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.File.dll
 /Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Serilog.Sinks.RollingFile.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/Users/nurhasyim/Codes/loginPOC2/loginPOC2/bin/Debug/net8.0/Newtonsoft.Json.dll

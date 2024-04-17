@@ -1,10 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Authorization;
 
 namespace loginPOC2.Pages;
-
-// [Authorize(Policy = "RequireLoggedIn")]
 
 public class DashboardModel : PageModel
 {

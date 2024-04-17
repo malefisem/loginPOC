@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/loginPOC2.bundle.scp.css"
     },
     {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/css/forms.css",
+      "PackagePath": "staticwebassets/css/forms.css"
+    },
+    {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/css/login.css",
       "PackagePath": "staticwebassets/css/login.css"
     },
@@ -15,6 +19,18 @@
     {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/font/alliance-bold.ttf",
+      "PackagePath": "staticwebassets/font/alliance-bold.ttf"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/font/alliance-extrabold.ttf",
+      "PackagePath": "staticwebassets/font/alliance-extrabold.ttf"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/font/alliance-medium.ttf",
+      "PackagePath": "staticwebassets/font/alliance-medium.ttf"
     },
     {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/alliance.png",
@@ -81,12 +97,32 @@
       "PackagePath": "staticwebassets/images/contactless/Wealth Management System Image.png"
     },
     {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/alertForm.js",
+      "PackagePath": "staticwebassets/js/alertForm.js"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/countryCode.js",
+      "PackagePath": "staticwebassets/js/countryCode.js"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/dropdown.js",
+      "PackagePath": "staticwebassets/js/dropdown.js"
+    },
+    {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/offline-alert.js",
       "PackagePath": "staticwebassets/js/offline-alert.js"
     },
     {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/person-registration.js",
+      "PackagePath": "staticwebassets/js/person-registration.js"
+    },
+    {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/script.js",
       "PackagePath": "staticwebassets/js/script.js"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/signaturePad.js",
+      "PackagePath": "staticwebassets/js/signaturePad.js"
     },
     {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/site.js",

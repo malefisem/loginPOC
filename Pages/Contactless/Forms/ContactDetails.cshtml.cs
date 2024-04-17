@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace loginPOC2.Pages;
 
-// [Authorize(Policy = "RequireLoggedIn")]
-
 public class ContactDetailsModel : PageModel
 {
     private readonly ILogger<ContactDetailsModel> _logger;

@@ -1,69 +1,90 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer; // Import JwtBearer namespace
-using Microsoft.Extensions.Logging;
-using Serilog;
-using Serilog.Formatting.Compact;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<IAuthenticationService, AuthenticationService>();
 
-builder.Logging.AddConsole();
-builder.Logging.AddDebug();
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();
+});
+
+builder.Services.AddSession();
+
+builder.Services.AddHttpClient();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddOpenIdConnect(options =>
+{
+    options.Authority = builder.Configuration["Keycloak:auth-server-url"];
+    options.ClientId = builder.Configuration["Keycloak:resource"];
+    options.ResponseType = "code";
+    options.SaveTokens = true;
+
+    options.RequireHttpsMetadata = false;
+
+    options.Events = new OpenIdConnectEvents
     {
-        options.Authority = builder.Configuration["Keycloak:AuthServerUrl"];
-        options.Audience = builder.Configuration["Keycloak:Resource"];
-
-        // Disable HTTPS requirement for development
-        options.RequireHttpsMetadata = false;
-        options.Events = new JwtBearerEvents
+        OnRedirectToIdentityProvider = context =>
         {
-            OnChallenge = context =>
-            {
-                var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger("JwtBearer");
-                logger.LogInformation("Authentication challenge occurred.");
-                context.Response.Redirect("/");
-                context.HandleResponse();
-                return Task.CompletedTask;
-            }
-        };
-    });
+            context.HandleResponse();
+            return Task.CompletedTask;
+        }
+    };
+});
 
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RequireLoggedIn", policy =>
         policy.RequireAuthenticatedUser());
 });
-builder.Services.AddSession();
-builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
-{
-    loggerConfiguration
-        .WriteTo.File(new CompactJsonFormatter(), "logs/log-.txt", rollingInterval: RollingInterval.Day)
-        .ReadFrom.Configuration(hostingContext.Configuration);
-});
 
 var app = builder.Build();
 
 app.UseSession();
+app.UseAuthentication();
+app.UseAuthorization(); // Moved up
+app.UseStaticFiles(); // Moved up
+app.UseMiddleware<AuthenticationMiddleware>(); // After UseAuthorization
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization();
-
 app.MapRazorPages();
+
+app.MapGet("/logout", async context =>
+{
+    var httpContextAccessor = context.RequestServices.GetRequiredService<IHttpContextAccessor>();
+    var httpContext = httpContextAccessor.HttpContext;
+
+    // Clear session
+    httpContext.Session.Clear();
+
+    // Sign out the user
+    await httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+    Console.WriteLine($"User logged out.");
+
+    // Redirect to the login page
+    context.Response.Redirect("/");
+});
 
 app.Run();
