@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/loginPOC2.bundle.scp.css"
     },
     {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap.min.css"
+    },
+    {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/css/forms.css",
       "PackagePath": "staticwebassets/css/forms.css"
     },
@@ -95,6 +99,22 @@
     {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/contactless/Wealth Management System Image.png",
       "PackagePath": "staticwebassets/images/contactless/Wealth Management System Image.png"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/offline.png",
+      "PackagePath": "staticwebassets/images/offline.png"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/offline.svg",
+      "PackagePath": "staticwebassets/images/offline.svg"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/to-online.png",
+      "PackagePath": "staticwebassets/images/to-online.png"
+    },
+    {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/to-online.svg",
+      "PackagePath": "staticwebassets/images/to-online.svg"
     },
     {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/js/alertForm.js",
