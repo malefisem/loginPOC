@@ -9,51 +9,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = loginPOC2
 build_property.RootNamespace = loginPOC2
-build_property.ProjectDir = /Users/nurhasyim/Codes/loginPOC2/loginPOC2/
+build_property.ProjectDir = /Users/faqihahsyazwani/Documents/www/loginPOC/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/nurhasyim/Codes/loginPOC2/loginPOC2
+build_property.MSBuildProjectDirectory = /Users/faqihahsyazwani/Documents/www/loginPOC
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Contactless/Dashboard.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Contactless/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29udGFjdGxlc3MvRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Contactless/Menu.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Contactless/Menu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29udGFjdGxlc3MvTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Error.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Index.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Login.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Privacy.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/_ViewImports.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/_ViewStart.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/nurhasyim/Codes/loginPOC2/loginPOC2/Pages/Shared/_Layout.cshtml]
+[/Users/faqihahsyazwani/Documents/www/loginPOC/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-67eag0ndvt

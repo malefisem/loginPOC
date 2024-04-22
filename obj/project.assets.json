@@ -2626,19 +2626,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/nurhasyim/.nuget/packages/": {}
+    "/Users/faqihahsyazwani/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/loginPOC2.csproj",
+      "projectUniqueName": "/Users/faqihahsyazwani/Documents/www/loginPOC/loginPOC2.csproj",
       "projectName": "loginPOC2",
-      "projectPath": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/loginPOC2.csproj",
-      "packagesPath": "/Users/nurhasyim/.nuget/packages/",
-      "outputPath": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/obj/",
+      "projectPath": "/Users/faqihahsyazwani/Documents/www/loginPOC/loginPOC2.csproj",
+      "packagesPath": "/Users/faqihahsyazwani/.nuget/packages/",
+      "outputPath": "/Users/faqihahsyazwani/Documents/www/loginPOC/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/nurhasyim/.nuget/NuGet/NuGet.Config"
+        "/Users/faqihahsyazwani/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2707,7 +2707,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
