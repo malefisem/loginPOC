@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("loginPOC2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de984036708b78f2c5e9b2e8db0a752d58ee7b24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+696b75a0eb5c344b2f7f0778eedf4d94dfb99b59")]
 [assembly: System.Reflection.AssemblyProductAttribute("loginPOC2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("loginPOC2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

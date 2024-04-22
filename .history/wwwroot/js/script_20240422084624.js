@@ -94,15 +94,15 @@ function performSearch() {
 function toggleNav() {
     var sidenav = document.getElementById("mySidenav");
     var main = document.getElementById("main");
-    // var mainpage = document.getElementById("main-page");
+    var mainpage = document.getElementById("main-page");
     if (sidenav.style.width === "250px") {
         sidenav.style.width = "0";
         main.style.marginLeft = "0";
-        // mainpage.style.marginLeft = "0";
+        mainpage.style.marginLeft = "0";
     } else {
         sidenav.style.width = "250px";
         main.style.marginLeft = "250px";
-        // mainpage.style.marginLeft = "250px";
+        mainpage.style.marginLeft = "250px";
     }
 }
 
@@ -110,7 +110,7 @@ function toggleNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
-    // document.getElementById("main-page").style.marginLeft = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }
 
 // Function to load form content using AJAX
