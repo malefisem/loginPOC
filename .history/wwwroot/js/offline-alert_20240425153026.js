@@ -54,27 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show the modal
         modal.style.display = 'block';
 
-        // Add event listeners for online and offline events
-        window.addEventListener('online', updateTryAgainButton);
-        window.addEventListener('offline', updateTryAgainButton);
-
-        // Update Try Again button initially
-        updateTryAgainButton();
+        // Add .online class to tryAgainButton if online
+        if (navigator.onLine) {
+            tryAgainButton.classList.add('online');
+        } else {
+            tryAgainButton.classList.remove('online');
+        }
     }
 
     // Call the function to display modal after login
     displayModalAfterLogin();
-
-    function updateTryAgainButton() {
-        var tryAgainButton = document.querySelector('.try-again-button');
-        if (navigator.onLine) {
-            tryAgainButton.classList.add('online');
-            tryAgainButton.disabled = false;
-        } else {
-            tryAgainButton.classList.remove('online');
-            tryAgainButton.disabled = true;
-        }
-    }
 
     function closeModal() {
         var modal = document.getElementById('statusModal');

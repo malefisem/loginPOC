@@ -7,36 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
     var modalContent = document.createElement('div');
     modalContent.className = 'modal-content';
 
-    // Close button
-    var closeButton = document.createElement('span');
-    closeButton.textContent = '×';
-    closeButton.className = 'close-button';
-    closeButton.addEventListener('click', closeModal); // Close modal when Close button clicked
-
     var statusMessage = document.createElement('p');
     statusMessage.id = 'statusMessage';
 
-    var tryAgainButton = document.createElement('button');
-    tryAgainButton.textContent = 'Try Again';
-    tryAgainButton.className = 'try-again-button';
-    tryAgainButton.addEventListener('click', function() {
-        // Add functionality to the "Try Again" button
-        if (navigator.onLine) {
-            window.location.href = '#';
-        } else {
-            alert("You are currently offline. Please connect to the internet and try again.");
-        }
-    });
+    var okButton = document.createElement('button');
+    okButton.textContent = 'OK';
+    okButton.className = 'ok-button';
+    okButton.addEventListener('click', closeModal);
 
-    var offlineModeButton = document.createElement('button');
-    offlineModeButton.textContent = 'Offline Mode';
-    offlineModeButton.className = 'offline-mode-button';
-    offlineModeButton.addEventListener('click', closeModal); // Close modal when Offline Mode button clicked
-
-    modalContent.appendChild(closeButton);
     modalContent.appendChild(statusMessage);
-    modalContent.appendChild(tryAgainButton);
-    modalContent.appendChild(offlineModeButton);
+    modalContent.appendChild(okButton);
 
     modal.appendChild(modalContent);
 
@@ -49,84 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
         var statusMessage = document.getElementById('statusMessage');
 
         // Display whatever message you want here
-        statusMessage.innerHTML = 'You are currently in offline mode';
+        statusMessage.innerHTML = 'Welcome! You are now logged in.';
 
         // Show the modal
         modal.style.display = 'block';
-
-        // Add event listeners for online and offline events
-        window.addEventListener('online', updateTryAgainButton);
-        window.addEventListener('offline', updateTryAgainButton);
-
-        // Update Try Again button initially
-        updateTryAgainButton();
     }
 
     // Call the function to display modal after login
     displayModalAfterLogin();
-
-    function updateTryAgainButton() {
-        var tryAgainButton = document.querySelector('.try-again-button');
-        if (navigator.onLine) {
-            tryAgainButton.classList.add('online');
-            tryAgainButton.disabled = false;
-        } else {
-            tryAgainButton.classList.remove('online');
-            tryAgainButton.disabled = true;
-        }
-    }
 
     function closeModal() {
         var modal = document.getElementById('statusModal');
         modal.style.display = 'none';
     }
 });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Create the modal and its content
-//     var modal = document.createElement('div');
-//     modal.id = 'statusModal';
-//     modal.className = 'modal';
-
-//     var modalContent = document.createElement('div');
-//     modalContent.className = 'modal-content';
-
-//     var statusMessage = document.createElement('p');
-//     statusMessage.id = 'statusMessage';
-
-//     var okButton = document.createElement('button');
-//     okButton.textContent = 'OK';
-//     okButton.className = 'ok-button';
-//     okButton.addEventListener('click', closeModal);
-
-//     modalContent.appendChild(statusMessage);
-//     modalContent.appendChild(okButton);
-
-//     modal.appendChild(modalContent);
-
-//     // Append the modal to the body
-//     document.body.appendChild(modal);
-
-//     // Function to display the modal after login
-//     function displayModalAfterLogin() {
-//         var modal = document.getElementById('statusModal');
-//         var statusMessage = document.getElementById('statusMessage');
-
-//         // Display whatever message you want here
-//         statusMessage.innerHTML = 'You are currently in offline mode';
-
-//         // Show the modal
-//         modal.style.display = 'block';
-//     }
-
-//     // Call the function to display modal after login
-//     displayModalAfterLogin();
-
-//     function closeModal() {
-//         var modal = document.getElementById('statusModal');
-//         modal.style.display = 'none';
-//     }
-// });
 
 
 // document.addEventListener('DOMContentLoaded', function() {

@@ -82,6 +82,39 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
+  /* offline modal */
+  .close-button {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+  }
+
+  .try-again-button,
+  .offline-mode-button {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .offline-mode-button {
+      background-color: #002659;
+      color: #fff;
+  }
+
+  .try-again-button:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+  }
+
+  .try-again-button.online {
+      border: 2px solid #002659;
+  }
+  
   .app {
       /* transform: scale(0.80); */
       display: flex;
@@ -588,7 +621,7 @@ body {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
   }
-
+  
   .modal-content {
     margin-top: auto;
     background-color: #fefefe;
@@ -597,47 +630,13 @@ body {
     border: 1px solid #888;
     width: 60%;
     border-radius: 20px;
-    position: relative;
+    position: relative; /* Ensure relative positioning for absolutely positioned children */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
-  .close-button {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-  }
-
-  /* Adjusted styles for buttons */
-  .try-again-button,
-  .offline-mode-button {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .offline-mode-button {
-    background-color: #002659;
-    color: #fff;
-  }
-
-  .try-again-button:disabled {
-    opacity: 0.7;
-    pointer-events: none;
-    border: 2px solid #002659;
-  }
-
-  .try-again-button.online {
-    border: 2px solid #002659;
-  }
-
+  
   .ok-button {
     position: absolute;
     bottom: 10px;

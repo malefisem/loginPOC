@@ -7,12 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var modalContent = document.createElement('div');
     modalContent.className = 'modal-content';
 
-    // Close button
-    var closeButton = document.createElement('span');
-    closeButton.textContent = '×';
-    closeButton.className = 'close-button';
-    closeButton.addEventListener('click', closeModal); // Close modal when Close button clicked
-
     var statusMessage = document.createElement('p');
     statusMessage.id = 'statusMessage';
 
@@ -22,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     tryAgainButton.addEventListener('click', function() {
         // Add functionality to the "Try Again" button
         if (navigator.onLine) {
-            window.location.href = '#';
+            closeModal();
+            // Add code to retry whatever action is needed
         } else {
             alert("You are currently offline. Please connect to the internet and try again.");
         }
@@ -33,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     offlineModeButton.className = 'offline-mode-button';
     offlineModeButton.addEventListener('click', closeModal); // Close modal when Offline Mode button clicked
 
-    modalContent.appendChild(closeButton);
     modalContent.appendChild(statusMessage);
     modalContent.appendChild(tryAgainButton);
     modalContent.appendChild(offlineModeButton);
@@ -49,32 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var statusMessage = document.getElementById('statusMessage');
 
         // Display whatever message you want here
-        statusMessage.innerHTML = 'You are currently in offline mode';
+        statusMessage.innerHTML = 'Welcome! You are now logged in.';
 
         // Show the modal
         modal.style.display = 'block';
-
-        // Add event listeners for online and offline events
-        window.addEventListener('online', updateTryAgainButton);
-        window.addEventListener('offline', updateTryAgainButton);
-
-        // Update Try Again button initially
-        updateTryAgainButton();
     }
 
     // Call the function to display modal after login
     displayModalAfterLogin();
-
-    function updateTryAgainButton() {
-        var tryAgainButton = document.querySelector('.try-again-button');
-        if (navigator.onLine) {
-            tryAgainButton.classList.add('online');
-            tryAgainButton.disabled = false;
-        } else {
-            tryAgainButton.classList.remove('online');
-            tryAgainButton.disabled = true;
-        }
-    }
 
     function closeModal() {
         var modal = document.getElementById('statusModal');
