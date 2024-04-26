@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Image
     var image = document.createElement('img');
     image.src = '../images/nointernet.png'; // Set the image source
+    image.alt = 'Image Description'; // Set the alt attribute for accessibility
 
     // Status message
     var statusMessage = document.createElement('p');
@@ -28,25 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
     statusMessage.innerHTML = 'You are currently in offline mode';
 
     // Additional information
-    var additionalInfo = document.createElement('ul');
+    var additionalInfo = document.createElement('p');
+    additionalInfo.innerHTML = '<span>*Press "try again" to switch to online mode and reload the page</span><br><span>or</span><br><span>*Press "offline mode" to continue browsing offline</span>';
     additionalInfo.className = 'additional-info';
-
-    // List items
-    var listItem1 = document.createElement('li');
-    listItem1.textContent = 'Press "try again" to switch to online mode and reload the page, or';
-    var listItem2 = document.createElement('li');
-    listItem2.textContent = 'Press "offline mode" to continue browsing offline';
-
-    additionalInfo.appendChild(listItem1);
-    additionalInfo.appendChild(listItem2);
 
     // Add image, status message, and additional info to status container
     statusContainer.appendChild(image);
     statusContainer.appendChild(statusMessage);
     statusContainer.appendChild(additionalInfo);
-
-    var hr = document.createElement('hr');
-    hr.className = 'status-modal-hr';
 
     var tryAgainButton = document.createElement('button');
     tryAgainButton.textContent = 'Try Again';
@@ -65,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     modalContent.appendChild(closeButton);
     modalContent.appendChild(statusContainer);
-    modalContent.appendChild(hr);
     
     var buttonsContainer = document.createElement('div');
     buttonsContainer.style.display = 'flex';

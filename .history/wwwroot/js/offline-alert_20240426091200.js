@@ -13,40 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     closeButton.className = 'close-button';
     closeButton.addEventListener('click', closeModal);
 
-    // Create a container for the status message and image
-    var statusContainer = document.createElement('div');
-    statusContainer.className = 'status-container';
-
-    // Image
-    var image = document.createElement('img');
-    image.src = '../images/nointernet.png'; // Set the image source
-
-    // Status message
     var statusMessage = document.createElement('p');
     statusMessage.id = 'statusMessage';
-    statusMessage.style.fontWeight = 'bold'; // Make status message bold
-    statusMessage.innerHTML = 'You are currently in offline mode';
-
-    // Additional information
-    var additionalInfo = document.createElement('ul');
-    additionalInfo.className = 'additional-info';
-
-    // List items
-    var listItem1 = document.createElement('li');
-    listItem1.textContent = 'Press "try again" to switch to online mode and reload the page, or';
-    var listItem2 = document.createElement('li');
-    listItem2.textContent = 'Press "offline mode" to continue browsing offline';
-
-    additionalInfo.appendChild(listItem1);
-    additionalInfo.appendChild(listItem2);
-
-    // Add image, status message, and additional info to status container
-    statusContainer.appendChild(image);
-    statusContainer.appendChild(statusMessage);
-    statusContainer.appendChild(additionalInfo);
-
-    var hr = document.createElement('hr');
-    hr.className = 'status-modal-hr';
 
     var tryAgainButton = document.createElement('button');
     tryAgainButton.textContent = 'Try Again';
@@ -64,8 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     offlineModeButton.addEventListener('click', closeModal);
 
     modalContent.appendChild(closeButton);
-    modalContent.appendChild(statusContainer);
-    modalContent.appendChild(hr);
+    modalContent.appendChild(statusMessage);
     
     var buttonsContainer = document.createElement('div');
     buttonsContainer.style.display = 'flex';

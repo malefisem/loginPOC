@@ -621,14 +621,6 @@ body {
       margin-bottom: 20px;
   }
 
-  /* Horizontal Rule within Status Modal */
-  .status-modal-hr {
-    border: none;
-    border-top: 1px solid #888;
-    width: 80%;
-    margin: 20px 0;
-  }
-
   /* Adjusted styles for buttons */
   .try-again-button,
   .offline-mode-button {

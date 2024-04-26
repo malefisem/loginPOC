@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Image
     var image = document.createElement('img');
     image.src = '../images/nointernet.png'; // Set the image source
+    image.alt = 'Image Description'; // Set the alt attribute for accessibility
 
     // Status message
     var statusMessage = document.createElement('p');
@@ -45,9 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     statusContainer.appendChild(statusMessage);
     statusContainer.appendChild(additionalInfo);
 
-    var hr = document.createElement('hr');
-    hr.className = 'status-modal-hr';
-
     var tryAgainButton = document.createElement('button');
     tryAgainButton.textContent = 'Try Again';
     tryAgainButton.className = 'try-again-button';
@@ -65,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     modalContent.appendChild(closeButton);
     modalContent.appendChild(statusContainer);
-    modalContent.appendChild(hr);
     
     var buttonsContainer = document.createElement('div');
     buttonsContainer.style.display = 'flex';

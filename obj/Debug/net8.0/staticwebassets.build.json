@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iSoqYpTuGj7pkXQPRWJhrJX0m3eXiHQi4bdqi07P8hE=",
+  "Hash": "8ApMdCdJhQfD7Ce+aWi0nmni76x5K6tA/shBTi19caY=",
   "Source": "loginPOC2",
   "BasePath": "_content/loginPOC2",
   "Mode": "Default",
@@ -509,6 +509,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/contactless/Wealth Management System Image.png"
+    },
+    {
+      "Identity": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/nointernet.png",
+      "SourceId": "loginPOC2",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/",
+      "BasePath": "_content/loginPOC2",
+      "RelativePath": "images/nointernet.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/nointernet.png"
     },
     {
       "Identity": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/offline.png",

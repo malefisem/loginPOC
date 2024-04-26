@@ -101,6 +101,10 @@
       "PackagePath": "staticwebassets/images/contactless/Wealth Management System Image.png"
     },
     {
+      "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/nointernet.png",
+      "PackagePath": "staticwebassets/images/nointernet.png"
+    },
+    {
       "Id": "/Users/nurhasyim/Codes/loginPOC2/loginPOC2/wwwroot/images/offline.png",
       "PackagePath": "staticwebassets/images/offline.png"
     },

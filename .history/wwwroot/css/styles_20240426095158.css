@@ -623,10 +623,10 @@ body {
 
   /* Horizontal Rule within Status Modal */
   .status-modal-hr {
-    border: none;
-    border-top: 1px solid #888;
-    width: 80%;
-    margin: 20px 0;
+    border: none; /* Remove default border */
+    border-top: 1px solid #888; /* Add border at the top */
+    width: 100%; /* Full width */
+    margin: 20px 0; /* Add margin top and bottom for spacing */
   }
 
   /* Adjusted styles for buttons */

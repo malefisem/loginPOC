@@ -11,42 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var closeButton = document.createElement('span');
     closeButton.textContent = '×';
     closeButton.className = 'close-button';
-    closeButton.addEventListener('click', closeModal);
+    closeButton.addEventListener('click', closeModal); // Close modal when Close button clicked
 
-    // Create a container for the status message and image
-    var statusContainer = document.createElement('div');
-    statusContainer.className = 'status-container';
-
-    // Image
-    var image = document.createElement('img');
-    image.src = '../images/nointernet.png'; // Set the image source
-
-    // Status message
     var statusMessage = document.createElement('p');
     statusMessage.id = 'statusMessage';
-    statusMessage.style.fontWeight = 'bold'; // Make status message bold
-    statusMessage.innerHTML = 'You are currently in offline mode';
-
-    // Additional information
-    var additionalInfo = document.createElement('ul');
-    additionalInfo.className = 'additional-info';
-
-    // List items
-    var listItem1 = document.createElement('li');
-    listItem1.textContent = 'Press "try again" to switch to online mode and reload the page, or';
-    var listItem2 = document.createElement('li');
-    listItem2.textContent = 'Press "offline mode" to continue browsing offline';
-
-    additionalInfo.appendChild(listItem1);
-    additionalInfo.appendChild(listItem2);
-
-    // Add image, status message, and additional info to status container
-    statusContainer.appendChild(image);
-    statusContainer.appendChild(statusMessage);
-    statusContainer.appendChild(additionalInfo);
-
-    var hr = document.createElement('hr');
-    hr.className = 'status-modal-hr';
 
     var tryAgainButton = document.createElement('button');
     tryAgainButton.textContent = 'Try Again';
@@ -55,22 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add functionality to the "Try Again" button
         if (navigator.onLine) {
             window.location.href = '#';
+        } else {
+            alert("You are currently offline. Please connect to the internet and try again.");
         }
     });
 
     var offlineModeButton = document.createElement('button');
     offlineModeButton.textContent = 'Offline Mode';
     offlineModeButton.className = 'offline-mode-button';
-    offlineModeButton.addEventListener('click', closeModal);
+    offlineModeButton.addEventListener('click', closeModal); // Close modal when Offline Mode button clicked
 
     modalContent.appendChild(closeButton);
-    modalContent.appendChild(statusContainer);
-    modalContent.appendChild(hr);
+    modalContent.appendChild(statusMessage);
     
     var buttonsContainer = document.createElement('div');
     buttonsContainer.style.display = 'flex';
-    buttonsContainer.style.justifyContent = 'center';
-    buttonsContainer.style.gap = '10px';
+    buttonsContainer.style.justifyContent = 'center'; // Center the buttons horizontally
+    buttonsContainer.style.padding = '0'; // Set padding to zero
+    buttonsContainer.style.margin = '0'; // Set margin to zero
     buttonsContainer.appendChild(tryAgainButton);
     buttonsContainer.appendChild(offlineModeButton);
     modalContent.appendChild(buttonsContainer);
@@ -84,13 +54,17 @@ document.addEventListener('DOMContentLoaded', function() {
         var modal = document.getElementById('statusModal');
         var statusMessage = document.getElementById('statusMessage');
 
+        // Display whatever message you want here
         statusMessage.innerHTML = 'You are currently in offline mode';
 
+        // Show the modal
         modal.style.display = 'block';
 
+        // Add event listeners for online and offline events
         window.addEventListener('online', updateTryAgainButton);
         window.addEventListener('offline', updateTryAgainButton);
 
+        // Update Try Again button initially
         updateTryAgainButton();
     }
 

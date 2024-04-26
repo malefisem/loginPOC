@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Image
     var image = document.createElement('img');
     image.src = '../images/nointernet.png'; // Set the image source
+    image.alt = 'Image Description'; // Set the alt attribute for accessibility
 
     // Status message
     var statusMessage = document.createElement('p');
@@ -66,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
     modalContent.appendChild(closeButton);
     modalContent.appendChild(statusContainer);
     modalContent.appendChild(hr);
+    var additionalInfoWidth = additionalInfo.offsetWidth;
+    hr.style.width = additionalInfoWidth + 'px';
     
     var buttonsContainer = document.createElement('div');
     buttonsContainer.style.display = 'flex';
