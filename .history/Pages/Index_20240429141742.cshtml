@@ -1,0 +1,141 @@
+﻿@page "/home"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBOS Support Centre</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+</head>
+<body style="background-color: #eaeaea;">
+    <header>
+        <div id="hamburger-button" onclick="toggleNav()"><i id="hamburger-button" class="fas fa-bars"></i></div>
+        <img src="images/alliance.png" alt="Alliance Logo" class="header-logo">
+        <div class="logo-name">ALLIANCE BANK</div>
+        <div class="logo-stitle">DIGITAL BANKING ONE SYSTEM <span class="version-name">V 1.2.25</span></div>
+        <div class="logout-dropdown">
+            <a href="#" id="logout-icon" class="logout-button" onclick="toggleLogout(event)"><i class="fa-regular fa-file-lines"></i></a>
+            <!-- Logout dropdown content, initially hidden -->
+            <div id="logout-dropdown-content" class="logout-dropdown-content">
+                <a href="/logout" class="logout-button" onclick="handleLogout()">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div id="mySidenav" class="sidenav">
+      <a href="#" class="sideBack">Home</a>
+      <a href="dbosuat.my" class="sideBack online" id="onlineLink"><i class="fas fa-wifi"></i> Online</a>
+      <div class="list-group">
+        <a href="#" class="list-group-item offline"><i class="fas fa-times"></i> Offline</a>
+        <a href="#" class="list-group-item active"><i class="fas fa-users"></i> Products</a>
+        <a href="#" class="list-group-item"><i class="fas fa-gear"></i> Dashboard</a>
+      </div>
+    </div>
+
+    <div id="main">
+        <div class="app">
+            <div class="main">
+                <h3>Hello, @ViewData["Username"]!</h3>
+                <h1 style="font-weight: bold;">How may I help you today?</h1>
+                <div class="main-cards-container">
+                    <div class="main-cards_item">
+                        <div class="main-card">
+                            <div class="main-card_content">
+                                <img src="images/contactless/Contactless Banking Icon.png" alt="Icon" class="main-card_icon">
+                                <a href="/Contactless/Menu" class="main-card_link">
+                                    <h2 class="main-card_title">Contactless Banking</h2>
+                                    <p class="main-card_text">Effortlessly manage finances with a tap or click. Access accounts, make secure transactions, and pay bills conveniently from your device.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled">
+                        <div class="main-card_content">
+                            <img src="images/contactless/Contact Centre Icon.png" alt="Icon" class="main-card_icon">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title">Contact Centre</h2>
+                                <p class="main-card_text">Your one-stop solution for seamless customer interactions. Experience hassie-free communication and prompt assistance for a smoother customer experience.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled">
+                        <div class="main-card_content">
+                            <img src="images/contactless/VCC Icon.png" alt="Icon" class="main-card_icon">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title">Virtual Credit Card</h2>
+                                <p class="main-card_text">Provides a safe online payment solution withoud the need for a physical card. Enjoy the convenience of swift and secure purchases.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled">
+                        <div class="main-card_content">
+                            <img src="images/contactless/Share Trading-Margin Icon.png" alt="Icon" class="main-card_icon">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title">Share Trading/Margin</h2>
+                                <p class="main-card_text">Amplify your investment potential by borrowing fund to increase your position size.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled">
+                        <div class="main-card_content">
+                            <img src="images/contactless/Loan Icon.png" alt="Icon" class="main-card_icon">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title">Loan Application</h2>
+                                <p class="main-card_text">Want some extra money? Apply with us.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled">
+                        <div class="main-card_content">
+                            <img src="images/contactless/CIF Standalone Icon.png" alt="Icon" class="main-card_icon">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title">CIF Standalone</h2>
+                                <p class="main-card_text">Streamline your customer information management with CIF Standalone.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled">
+                        <div class="main-card_content">
+                            <img src="images/contactless/System Maintenance Icon.png" alt="Icon" class="main-card_icon">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title">System Maintenance</h2>
+                                <p class="main-card_text">Elevating performance and realibility. Our routine maintenance ensures optimal functionality, security and efficiency of our system.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="main-cards_item">
+                    <div class="main-card disabled" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('../images/contactless/Wealth\ Management\ System\ Image.png') center/cover; background-size: cover; background-position: center; color: white;">
+                        <div class="main-card_content">
+                            <a href="#" class="main-card_link">
+                                <h2 class="main-card_title" style="color: rgba(255, 255, 255, 0.7); font-size: 20px;">Wealth Management System</h2>
+                                <p class="main-card_text" style="color: rgba(255, 255, 255, 0.7); font-size: 16px;">Let's become a wealthy person.</p>
+                            </a>
+                        </div>
+                    </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/offline-alert.js"></script>
+</body>
+</html>

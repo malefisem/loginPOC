@@ -1,0 +1,84 @@
+@page "/"
+@model LoginModel
+@{
+    ViewData["Title"] = "Login page";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBOS Support Centre</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha384-MNPuVzSP5LcvlHgti0NPZ1z7UDT2LKjK2DmWlPZkTKYlfs6Jguw1+5BXhFn6M27" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            @Model.ErrorMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <header class="cust-appheader app-header navbar" style="display: flex; align-items: center; justify-content: flex-start; padding-left: 68px; position: relative;">
+        <img src="images/alliance.png" alt="Alliance Logo" style="width: 30px; height: 30px;">
+        <div class="logo-name">ALLIANCE BANK</div>
+        <div class="logo-stitle">DIGITAL BANKING ONE SYSTEM <span class="version-name">V 1.2.25</span></div>
+    </header>
+    
+    
+        <div class="app body-container">
+            <div class="title-area">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="h1Title" style="height: 1em;">Support Centre</h1>
+                        <h2 class="h2Title">Login to access Support Centre</h2>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="container-wrap">
+                <div class="container" style="height: 17em;">
+                    <div class="justify-content-md-center row">
+                        <div class="col-md-4">
+                            <form class="login-form-wrap" method="post" asp-controller="Login" asp-action="Index">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="lock-title-box">
+                                            <i class="fa-solid fa-lock"></i>
+                                            <h1 class="lock-title">SECURE LOGIN</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 input-group">
+                                    <input name="username" placeholder="LAN ID" autocomplete="username" type="text" id="username" class="form-control" style="width: 75%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                                </div>
+                                <div class="mb-4 input-group">
+                                    <input name="password" placeholder="Password" autocomplete="current-password" type="password" id="password" class="form-control" style="width: 75%; padding: 12px 20px; margin: -4px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="px-4 btn btn-primary" style="margin: 2em;">LOGIN</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+                        <div class="title-area" style="margin-top: 1em;">
+                            <div class="justify-content-md-center row col-md-2">
+                                <button type="button" class="px-4 contact-support btn btn-secondary">CONTACT SUPPORT</button>
+                            </div>
+                            <div class="justify-content-md-center row col-md-2">
+                                <button type="button" class="px-4 feature-Updated btn btn-#ffffff">What's New?</button>
+                            </div>
+                        </div>
+    </div>
+
+    <footer class="custom-footer app-footer">
+        <div class="custom-footer-container"><div class="custom-footer-text-container">Alliance Banking Digital Banking One System v1.2.25</div><div class="custom-footer-text-container">Copyright © 2018 Alliance Bank Malaysia Berhad 198201008390 (88103-W)</div></div></div>
+    </footer>
+</body>
+</html>
