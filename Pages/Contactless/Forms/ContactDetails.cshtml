@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="elem">
                         <label for="countryCodeM">Country Code</label>
-                        <select id="countryCodeM" class="countryCodeSelect">
+                        <select id="countryCodeM" name="countryCodeM" class="countryCodeSelect">
                         </select>
                     </div>
                     <div class="elem">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="elem">
                         <label for="countryCodeO">Country Code</label>
-                        <select id="countryCodeO" class="countryCodeSelect">
+                        <select id="countryCodeO" name="countryCodeO" class="countryCodeSelect">
                         </select>
                     </div>
                     <div class="elem">
@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="elem">
                         <label for="countryCodeH">Country Code</label>
-                        <select id="countryCodeH" class="countryCodeSelect">
+                        <select id="countryCodeH" name="countryCodeH" class="countryCodeSelect">
                         </select>
                     </div>
                     <div class="elem">
@@ -85,10 +85,13 @@
                     <input type="hidden" name="customerSignature" class="customer-signature">
                 </div>
                 <div class="row">
-                    <input type="submit" value="Save" class="accent-button">
+                    <button name="saveButton" id="saveButton" type="submit" value="Save" class="accent-button" onclick="saveForm()">
+                        <label name="saveButton" for="saveButton">Save</label>
+                    </button>
                 </div>
             </div>
         </form>
     </div>
+    <script src="../../js/submitForm.js"></script>
 </body>
 </html>
