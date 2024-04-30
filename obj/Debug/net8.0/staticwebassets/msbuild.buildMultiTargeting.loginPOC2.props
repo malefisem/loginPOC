@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/loginPOC2.props" />
-</Project>
