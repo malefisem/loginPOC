@@ -1,5 +1,12 @@
-# Ignore obj folder
-obj
+# Ignore Visual Studio files
+*.suo
+*.user
+*.vs/
 
-# Ignore bin folder
-bin
+# Ignore build output
+bin/
+obj/
+
+# Ignore NuGet packages
+*.nupkg
+*.paket/
