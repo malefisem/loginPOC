@@ -10,3 +10,4 @@ obj/
 # Ignore NuGet packages
 *.nupkg
 *.paket/
+.history/
