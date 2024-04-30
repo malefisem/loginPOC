@@ -1,4 +1,4 @@
-@page "/contactless/servicerequest"
+@page "/Contactless/ServiceRequest"
 @model ServiceRequestModel
 @{
     ViewData["Title"] = "Service Request";
@@ -27,7 +27,7 @@
             <div class="logout-dropdown">
                 <a href="#" id="logout-icon" class="logout-button" onclick="toggleLogout()"><i class="fa-regular fa-file-lines"></i></a>
                 <div id="logout-dropdown-content" class="logout-dropdown-content">
-                    <a href="/logout" class="logout-button" onclick="handleLogout()">Logout</a>
+                    <a href="/logout" class="logout-button" onclick="handleLogout()"><i class="fa fa-sign-out mirrored-icon" aria-hidden="true"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -59,16 +59,16 @@
                 <div class="content-con">
                     <div class="menu-list">
                         <h4><b>Categories</b></h4>
-                        <a href="#" class="menu-list-item">Wealth</a>
-                        <a href="#" class="menu-list-item">BANCA Manulife</a>
-                        <a href="#" class="menu-list-item">BTFC</a>
-                        <a href="#" class="menu-list-item">Credit Card</a>
+                        <a href="#" class="menu-list-item disabled">Wealth</a>
+                        <a href="#" class="menu-list-item disabled">BANCA Manulife</a>
+                        <a href="#" class="menu-list-item disabled">BTFC</a>
+                        <a href="#" class="menu-list-item disabled">Credit Card</a>
                         <a href="#" class="menu-list-item">Deposits</a>
-                        <a href="#" class="menu-list-item">Mortgage</a>
-                        <a href="#" class="menu-list-item">Personal Loan</a>
-                        <a href="#" class="menu-list-item">RBIL</a>
+                        <a href="#" class="menu-list-item disabled">Mortgage</a>
+                        <a href="#" class="menu-list-item disabled">Personal Loan</a>
+                        <a href="#" class="menu-list-item disabled">RBIL</a>
                         <a href="#" class="menu-list-item active" >Service Request</a>
-                        <a href="#" class="menu-list-item">Bundles</a>
+                        <a href="#" class="menu-list-item disabled">Bundles</a>
                     </div>
                     <div class="forms-list">
                         <h4><b>Service Request</b></h4>

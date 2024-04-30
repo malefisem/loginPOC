@@ -94,8 +94,9 @@ body {
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       border-radius: 5px;
-      top: 100%; /* Position the dropdown content below the button */
-      left: calc(100% - 160px);
+      top: 100%;
+      left: calc(100% - 145px);
+      border: solid 0.5px black;
   }
 
   .logout-dropdown-content a {
@@ -105,13 +106,8 @@ body {
       display: block;
   }
 
-  .logout-dropdown-content a:hover {
-      background-color: #f1f1f1;
-  }
-
-  /* Hover effect */
-  .logout-dropdown-content a:hover {
-    background-color: #f9f9f9;
+  .mirrored-icon {
+      transform: scaleX(-1);
   }
 
   /* Sidebar Styles */
@@ -434,21 +430,41 @@ body {
     color: #666;
     font-weight: bold;
     text-decoration: none;
-    width: 100%;
-    padding: 10px;
+    width: calc(100% - 20px); /* Adjust width to accommodate the triangle */
+    padding: 10px 10px 10px 20px; /* Adjust padding for spacing */
     transition: background-color 0.3s, color 0.3s;
-  }
+    position: relative; /* Added position relative */
+}
   
   .menu-list a:hover {
     background-color: #fff;
     color: #000;
-    text-decoration: underline;
   }
   
   a.menu-list-item.active {
-    color: #333;
-    text-decoration: underline;
-}   
+      color: #000;
+      text-decoration: underline;
+  }
+  
+  .menu-list a.menu-list-item.disabled {
+      color: #666;
+      pointer-events: none;
+      cursor: default;
+  }
+
+  /* Triangle bullet point styles */
+  .menu-list a::before {
+      content: "";
+      position: absolute;
+      left: 5px; /* Adjust position of the triangle */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 0 5px 8px; /* Adjusted border width */
+      border-color: transparent transparent transparent #666; /* Adjusted border color */
+  }
   
   .forms-list {
     flex: 0.7;
@@ -655,6 +671,7 @@ body {
     top: 5px;
     right: 10px;
     cursor: pointer;
+    font-size: 25px;
   }
 
   /* Status Container */
