@@ -1,0 +1,94 @@
+@page "/contactless/forms/contactdetails"
+@model ContactDetailsModel
+@{
+    ViewData["Title"] = "Contact Details";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update Details</title>
+    <link rel="stylesheet" href="~/css/forms.css">
+    <script src="~/js/countryCode.js"></script>
+    <script src="~/js/alertForm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+    <script defer src="~/js/signaturePad.js"></script>
+</head>
+<body>
+    <header class="header-top">
+            <div class="title-head">Update Details</div>
+    </header>
+
+    <div class="container">
+        <form id="contactDetails" class="signature-form">
+            <div class="section">
+                <h3 class="title">Customer Details</h3>
+                <div class="row-above">
+                    <div class="elem">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="elem">
+                        <label for="newId">New MyKad/Passport/MyPR</label>
+                        <input type="text" name="IDno" id="IDno" maxlength="12" pattern="[0-9]{12}" title="Numbers only" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="title">Contact Details</h3>
+                <div class="row">
+                    <div class="elem">
+                        <label for="countryCodeM">Country Code</label>
+                        <select id="countryCodeM" class="countryCodeSelect">
+                        </select>
+                    </div>
+                    <div class="elem">
+                        <label for="mobileNo">Mobile No</label>
+                        <input type="text" name="mobileNo" id="mobileNo" maxlength="12" pattern="[0-9]{12}" title="Numbers only">
+                    </div>
+                    <div class="elem">
+                        <label for="countryCodeO">Country Code</label>
+                        <select id="countryCodeO" class="countryCodeSelect">
+                        </select>
+                    </div>
+                    <div class="elem">
+                        <label for="officeNo">Office No</label>
+                        <input type="text" name="officeNo" id="officeNo" maxlength="12" pattern="[0-9]{12}" title="Numbers only">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="elem">
+                        <label for="countryCodeH">Country Code</label>
+                        <select id="countryCodeH" class="countryCodeSelect">
+                        </select>
+                    </div>
+                    <div class="elem">
+                        <label for="homeNo">Home No</label>
+                        <input type="text" name="homeNo" id="homeNo" maxlength="12" pattern="[0-9]{12}" title="Numbers only">
+                    </div>
+                    <div class="elem">
+                        <!-- Empty space -->
+                    </div>
+                    <div class="elem">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                </div>
+                <div class="elem signature-container">
+                    <label for="signature2">Signature</label>
+                    <div class="signature-pad-container">
+                        <canvas class="signature-pad" width="400" height="200"></canvas>
+                    </div>
+                    <button type="button" class="clear-signature">Clear Signature</button>
+                    <input type="hidden" name="customerSignature" class="customer-signature">
+                </div>
+                <div class="row">
+                    <input type="submit" value="Save" class="accent-button">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
